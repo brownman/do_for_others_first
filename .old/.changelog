@@ -1,0 +1,8 @@
+- 3.9.14 
+- test the project on a vagrand box 
+- removed extra utils from the installer
+- installer: add library anchor installation
+- add dependencies file 
+- installer - add func to install missing dependencies
+- the ~/link - trigger the library, use the function: active_important which activating PS1,PS4,fix bash flags, enables: quick_reminder()
+

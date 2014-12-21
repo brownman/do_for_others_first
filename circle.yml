@@ -1,0 +1,12 @@
+machine:
+  python:
+    version: pypy-2.2.1
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+test:
+  override:
+  - chmod +x ./travis.sh
+  - ./travis.sh
+  - cp /tmp/session.png $CIRCLE_ARTIFACTS
