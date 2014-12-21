@@ -60,9 +60,7 @@ install1(){
     mute  $cmd_distro_install
 }
 
-install_library(){
-    bash -c $dir_root/steps/library.sh
-}
+
 fix_permission(){
       chmod +x *.sh -R $dir_root
 }
@@ -70,6 +68,15 @@ fix_permission(){
 gui_testing(){
       $dir_root/x11/setup.sh
 }
+
+install_library(){
+    bash -c $dir_root/steps/library.sh
+}
+install_service(){
+    bash -c $dir_root/steps/service.sh
+}
+
+
 
 steps(){
   fix_permission #github editor issues
@@ -81,5 +88,6 @@ steps(){
   install1
   install_library
   gui_testing
+  install_service
  }
 steps
