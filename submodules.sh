@@ -1,17 +1,20 @@
+set -u
+
 set_env(){
-    local repo=git@github.com/brownman
+    repo_base=git://github.com/brownman
 
-    local repo1=LIBRARY
-    local path1=SCRIPT/LIBRARY
+    repo1=LIBRARY
+    path1=SCRIPT/LIBRARY
 
-    local repo2=SERVICE
-    local path2=SCRIPT/SERVICE
+    repo2=SERVICE
+    path2=SCRIPT/SERVICE
 }
 
 add1(){
-    local repo=$1
+    local repo0=$1
     local path=$2
-    git submodules add --depth 1 $repo $path
+    local repo=$repo_base/$repo0.git
+    confirm git submodule add $repo $path --depth 1
 }
 
 rm1(){
@@ -23,10 +26,17 @@ rm1(){
 }
 
 confirm(){
+    local args=( $@ )
+    local cmd="${args[@]}"
+
+    echo "[CONFIRM] $cmd"
     echo press y to continue
     read answer
-    if [ "$answer" != y ];then
+    if [ "$answer" = y ];then
+        eval "$cmd"
+    else
         exit 1
+
     fi
 }
 
@@ -35,12 +45,12 @@ steps(){
     clear
     local branch=$( git branch )
 
-#    echo compare: "* $branch =~ develop"
-    if [[ "* $branch" =~ develop ]];then
+    #    echo compare: "* $branch =~ develop"
+    if [[ "$branch" = '* develop' ]];then
         echo you are on branch: develop
         echo please use git flow for adding a new feature
     else
-        confirm
+        #confirm
         set_env
         add1 $repo1 $path1
         add1 $repo2 $path2

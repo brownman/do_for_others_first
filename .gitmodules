@@ -1,0 +1,6 @@
+[submodule "SCRIPT/LIBRARY"]
+	path = SCRIPT/LIBRARY
+	url = git://github.com/brownman/LIBRARY.git
+[submodule "SCRIPT/SERVICE"]
+	path = SCRIPT/SERVICE
+	url = git://github.com/brownman/SERVICE.git
