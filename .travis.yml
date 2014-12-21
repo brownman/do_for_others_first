@@ -19,10 +19,10 @@ before_install:
   - uname -m
   - lsb_release -a
  
- before_script:
+before_script:
   - ls -lt SCRIPT
   
- script:
+script:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
   - chmod +x ./travis.sh
   - ./travis.sh
