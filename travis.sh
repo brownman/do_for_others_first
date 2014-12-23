@@ -42,10 +42,11 @@ xcowsay
 flite
 START
 }
+
 decide1(){
   case $distro in
   ubuntu)
-  list_distro_pkg='fortune pv toilet curl wget tree xcowsay'
+  list_distro_pkg='fortune pv toilet curl wget tree xcowsay libnotify-bin'
   cmd_distro_install="$SUDO apt-get install -y -q $list_distro_pkg"
   ;;
   *)
@@ -99,24 +100,23 @@ install_modules(){
 test_fast_fail(){
 which notify-send
 whereis notify-send
-notify-send hi
+#notify-send hi
 }
+
 steps(){
   fix_permission #github editor issues
   
   ensure_submodules
   set_env
   
-  #INSTALL
-   apt1
-  test_fast_fail  
-  
- # decide1
-  #install1
+ #INSTALL
+ decide1
+ install1
+ apt1
  
-    #TESTING
+  #TESTING
   install_modules
+  test_fast_fail
   gui_testing
-  #install_service
- }
+  }
 steps
