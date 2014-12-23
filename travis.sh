@@ -79,10 +79,11 @@ steps(){
   
   ensure_submodules
   set_env
-  decide1
-
   install1
   install_modules
+
+  #TESTING
+  decide1
   gui_testing
   #install_service
  }
