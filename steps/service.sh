@@ -3,13 +3,12 @@ ensure1(){
 }
 
 install1(){
-local file=/tmp/dir_root/SCRIPT/SERVICE/service.sh
+local file=$dir_anchor/SCRIPT/SERVICE/service.sh
 ( test -L $file ) || { ln -s $file /tmp; }
 }
 
 run1(){
-    test -L /tmp/service.sh
-    /tmp/service.sh 
+    test -L /tmp/service.sh && /tmp/service.sh 
 }
 test1(){
   /tmp/service.sh crontab
