@@ -72,6 +72,7 @@ ensure1(){
 }
 
 set_env(){
+    export PATH="$PATH:/usr/bin/"
   ensure1
   vars1
   struct1
@@ -95,7 +96,11 @@ install_modules(){
     $dir_root/install_modules.sh
 }
 
-
+test_fast_fail(){
+which notify-send
+whereis notify-send
+notify-send hi
+}
 steps(){
   fix_permission #github editor issues
   
@@ -107,6 +112,7 @@ steps(){
   decide1
   install1
   apt1
+  test_fast_fail  
     #TESTING
   install_modules
   gui_testing
