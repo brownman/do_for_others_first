@@ -22,7 +22,7 @@ ensure_submodules(){
 }
 
 apt1(){
-sudo apt-get install <<START
+sudo apt-get install -y -q<<START
 libnotify-bin
 fortune-mod
 toilet
