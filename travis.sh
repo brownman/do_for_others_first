@@ -20,6 +20,28 @@ struct1(){
 ensure_submodules(){
     ls -lr SCRIPT/
 }
+
+apt1(){
+sudo apt-get install <<START
+libnotify-bin
+fortune-mod
+toilet
+curl
+wget
+gxmessage 
+tree
+vim-gtk
+pv
+cowsay
+toilet
+figlet
+sox
+libsox-fmt-mp3
+zenity
+xcowsay
+flite
+START
+}
 decide1(){
   case $distro in
   ubuntu)
@@ -84,7 +106,7 @@ steps(){
 #INSTALL
   decide1
   install1
-  
+  apt1
     #TESTING
   install_modules
   gui_testing
