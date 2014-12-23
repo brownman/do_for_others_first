@@ -3,7 +3,7 @@ ensure1(){
 }
 
 install1(){
-local file=$dir_anchor/SCRIPT/SERVICE/service.sh
+local file=$dir_modules/SCRIPT/SERVICE/service.sh
 ( test -L $file ) || { ln -s $file /tmp; }
 }
 
