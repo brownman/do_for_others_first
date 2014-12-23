@@ -3,16 +3,18 @@ ensure1(){
 }
 
 install1(){
-  $dir_modules/SERVICE/install.sh
+local file=/tmp/dir_root/SCRIPT/SERVICE/service.sh /tmp
+( test -L $file ) || { ln -s $file; }
 }
 
 run1(){
-    test -f /tmp/service.sh
+    test -L /tmp/service.sh
     /tmp/service.sh 
 }
 test1(){
-  use print
-  print color 32 ok
+  /tmp/service.sh crontab
+  #use print
+  #print color 32 ok
 }
 
 
