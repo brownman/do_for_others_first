@@ -69,13 +69,9 @@ gui_testing(){
       $dir_root/x11/setup.sh
 }
 
-install_library(){
-    bash -c $dir_root/steps/library.sh
+install_modules(){
+    $dir_root/install_modules.sh
 }
-install_service(){
-    bash -c $dir_root/steps/service.sh
-}
-
 
 
 steps(){
