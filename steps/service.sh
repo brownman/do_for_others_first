@@ -3,8 +3,8 @@ ensure1(){
 }
 
 install1(){
-local file=/tmp/dir_root/SCRIPT/SERVICE/service.sh /tmp
-( test -L $file ) || { ln -s $file; }
+local file=/tmp/dir_root/SCRIPT/SERVICE/service.sh
+( test -L $file ) || { ln -s $file /tmp; }
 }
 
 run1(){
