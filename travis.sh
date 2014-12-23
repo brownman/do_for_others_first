@@ -82,8 +82,8 @@ steps(){
   decide1
 
   install1
-  install_library
+  install_modules
   gui_testing
-  install_service
+  #install_service
  }
 steps
