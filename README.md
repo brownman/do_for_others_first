@@ -10,6 +10,8 @@ Do for others first
  Modules
  ---
  - [LIBRARY](https://github.com/brownman/LIBRARY)
+ - [SERVICE](https://github.com/brownman/SERVICE)
+
  
 todo
 ===
