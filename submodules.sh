@@ -1,13 +1,10 @@
 set -u
 
+repo1=${1:-LIBRARY}
 set_env(){
     repo_base=git://github.com/brownman
 
-    repo1=LIBRARY
-    path1=SCRIPT/LIBRARY
-
-    repo2=SERVICE
-    path2=SCRIPT/SERVICE
+    path1=SCRIPT/$repo1
 }
 
 add1(){
@@ -53,7 +50,6 @@ steps(){
         #confirm
         set_env
         add1 $repo1 $path1
-        add1 $repo2 $path2
     fi
 }
 
