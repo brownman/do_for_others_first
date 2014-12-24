@@ -46,11 +46,10 @@ steps(){
     if [[ "$branch" = '* develop' ]];then
         echo you are on branch: develop
         echo please use git flow for adding a new feature
-    else
+    fi 
         #confirm
         set_env
         add1 $repo1 $path1
-    fi
 }
 
 steps

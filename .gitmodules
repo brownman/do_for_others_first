@@ -4,3 +4,9 @@
 [submodule "SCRIPT/SERVICE"]
 	path = SCRIPT/SERVICE
 	url = git://github.com/brownman/SERVICE.git
+[submodule "SCRIPT/prototypes"]
+	path = SCRIPT/prototypes
+	url = git://github.com/brownman/prototypes.git
+[submodule "SCRIPT/GENERATOR"]
+	path = SCRIPT/GENERATOR
+	url = git://github.com/brownman/GENERATOR.git
