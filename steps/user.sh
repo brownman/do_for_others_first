@@ -1,23 +1,27 @@
+set -u
+set -e
+
 ensure1(){
-    ls -lt $dir_root/bin/user.sh
+  test -f $dir_root/bin/user.sh
 }
 
 install1(){
-  $dir_root/bin/user.sh
+  bash -c $dir_root/bin/user.sh
 }
 run1(){
     true
 }
-test_before(){
-  test -L /tmp/dir_root
-}
-test_after(){
 
-  use print
-  print color 32 ok
-  type commander
-#  commander type dialog_confirm
-commander echo ok
+test_before(){
+    true
+}
+
+test_after(){
+    local file=$HOME/.link
+    test -f $HOME/.link
+    cat $HOME/.bashrc | grep '.link'
+    (  unset dir_root; source $HOME/.bashrc; test -v dir_root )
+    test -v dir_workspace
 }
 
 
@@ -25,7 +29,8 @@ steps(){
  ensure1
  install1
  test_before
- run1 && test_after
+ run1
+ test_after
 }
 
 steps
