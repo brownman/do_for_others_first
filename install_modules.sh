@@ -1,7 +1,10 @@
+test -v dir_root
+
 steps(){
-    bash -c $dir_root/steps/user.sh
-    bash -c $dir_root/steps/library.sh
-    bash -c $dir_root/steps/service.sh
+    bash -c $dir_root/steps/user.sh 
+    bash -c $dir_root/steps/library.sh 
+#bash -c $dir_root/steps/service.sh
 }
 
-steps
+( set -e; steps )
+echo $?

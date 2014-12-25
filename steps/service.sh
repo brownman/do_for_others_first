@@ -1,18 +1,21 @@
 set -e
+set -u
 ensure1(){
-    ls -lt SCRIPT/SERVICE
+    ls -lt $dir_root/SCRIPT/SERVICE
 }
 
 install1(){
-local file=$dir_modules/SERVICE/service.sh
-( test -L $file ) || { ln -s $file /tmp; }
+local file=$dir_root/SCRIPT/SERVICE/service.sh
+local filename=$(basename $file)
+( commander test -L /tmp/$filename ) || {  commander ln -s $file /tmp ; }
+echo $?
 }
 
 run1(){
-    test -L /tmp/service.sh && /tmp/service.sh 
+commander bash -c /tmp/service.sh 
 }
 test1(){
-  /tmp/service.sh crontab
+ commander  /tmp/service.sh mean_time 
   #use print
   #print color 32 ok
 }

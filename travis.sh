@@ -120,11 +120,12 @@ steps(){
  #INSTALL
  decide1
  install1
- apt1
+# apt1
  
   #TESTING
   install_modules
   test_fast_fail
-  gui_testing
+  #gui_testing
   }
-steps
+  ( steps )
+echo $?
