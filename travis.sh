@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
 set -u
-set -e
+trap_err(){
+echo 1>&2 $FUNCNAME
+test -f /tmp/err && { cat /tmp/err; } || true
+exit 1
+}
+
+trap trap_err ERR
 
 ############################################# 1st anchor
-export dir_root=$(pwd)
-
+export dir_root=$( cd `dirname $0`; echo $PWD )
+echo 1>&2 "[dir_root] $dir_root"
 mute(){
     local args=( $@ )
     local cmd="${args[@]}"
@@ -18,7 +24,7 @@ struct1(){
     export dir_modules=$(pwd)/SCRIPT
 }
 ensure_submodules(){
-    ls -lr SCRIPT/
+    ls -lr $dir_root/SCRIPT/
 }
 
 apt1(){
@@ -96,7 +102,7 @@ gui_testing(){
 }
 
 install_modules(){
-    $dir_root/install_modules.sh
+bash -e    $dir_root/install_modules.sh
 }
 
 test_fast_fail(){

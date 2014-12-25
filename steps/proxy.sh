@@ -1,10 +1,9 @@
-set -e
 ensure1(){
-    ls -lt SCRIPT/LIBRARY
+ ls -lt SCRIPT/GENERATOR
 }
 
 install1(){
-  $dir_modules/LIBRARY/install.sh
+ ln1  $dir_modules/GENERATOR/proxy.sh
 }
 run1(){
     source /tmp/library.cfg

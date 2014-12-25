@@ -1,3 +1,4 @@
+set -e
 ensure1(){
     ls -lt SCRIPT/SERVICE
 }

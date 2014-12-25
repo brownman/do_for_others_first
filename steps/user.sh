@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e 
+set -u
 #author: ofer shaham
 #info: installer
 #date: 20-5-2014
@@ -9,6 +11,8 @@ set -o nounset
 #set -e
 #source struct.cfg
 #[  -d $dir_workspace ] && { echo "[dir_workspace] already exist" ; } || { mkdir -p $dir_workspace ; }
+
+test -v dir_root || { echo 1>&2 "[ERR] dir_root not defined yet" ; exit 0;  }
 breaking(){
 echo breaking
 break
@@ -79,7 +83,7 @@ single(){
 
 steps(){
     clear
-    export dir_root="$( pwd )"
+
     echo "[dir root] $dir_root"
     single    add_bashrc_missing_link
     single    add_1_line_to_bashrc_bottom
