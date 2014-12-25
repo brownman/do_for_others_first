@@ -98,11 +98,11 @@ fix_permission(){
 }
 
 gui_testing(){
-      $dir_root/x11/setup.sh
+  bash -E    $dir_root/x11/setup.sh
 }
 
 install_modules(){
-bash -e    $dir_root/install_modules.sh
+bash -E    $dir_root/install_modules.sh
 }
 
 test_fast_fail(){
