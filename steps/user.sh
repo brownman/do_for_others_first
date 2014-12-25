@@ -26,11 +26,11 @@ test_after(){
 
 
 steps(){
- ensure1
- install1
- test_before
- run1
- test_after
+ commander0 ensure1
+ commander0 install1
+ commander0 test_before
+ commander0 run1
+ commander0 test_after
 }
 
 steps
