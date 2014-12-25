@@ -1,12 +1,10 @@
 #!/bin/bash
-set -e
 set -u
 #author: ofer shaham
 #info: installer
 #date: 20-5-2014
 #time: 7:47
 #version: 1
-pushd `dirname $0`>/dev/null
 set -o nounset
 #set -e
 #source struct.cfg
@@ -91,6 +89,5 @@ steps(){
     # $dir_root/MENU/install_anchor.sh
 }
 steps
-popd >/dev/null
 
 echo $?
