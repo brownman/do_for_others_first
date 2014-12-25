@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 set -u
 #author: ofer shaham
 #info: installer
@@ -10,7 +11,8 @@ set -o nounset
 #source struct.cfg
 
 
-test -v dir_root || { echo 1>&2 "[ERR] dir_root not defined yet" ; exit 0;  }
+#test -v dir_root || { echo 1>&2 "[ERR] dir_root not defined yet" ; exit 0;  }
+
 breaking(){
     echo breaking
     break
@@ -45,10 +47,10 @@ FILE
 
 add_1_line_to_bashrc_bottom(){
     test -f ~/.bashrc || { echo you are wierd; exit 1; }
-    line="source ~/link"
+    line="source $HOME/link"
     msg=" Appending 1 line  to .bashrc: $line"
     #echo "[line] $line"
-    str=$( cat ~/.bashrc | grep "$line" )
+    str=$( cat $HOME/.bashrc | grep "$line" )
     res=$?
     [ $res -eq 1  ] && { echo "$msg" ; echo "$line" >> ~/.bashrc; } || { echo "[bashrc Link] already Exist " ;}
 }
