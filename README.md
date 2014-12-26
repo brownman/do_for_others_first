@@ -3,7 +3,7 @@
 
 Do for others first
 ===
-- A framework making the shell life easier by utilizing gui tools
+- A framework for making the shell life easier by utilizing GUI tools
 
 
 
