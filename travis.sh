@@ -8,7 +8,7 @@ $cmd_trap_err
 
 install_module(){
   local mode=$1
-  commander0 bash -c "$dir_root/steps/${mode}.sh"
+  commander0 bash -e "$dir_root/steps/${mode}.sh"
 }
  
 travis_steps(){
