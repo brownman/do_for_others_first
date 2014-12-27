@@ -14,7 +14,7 @@ test_first(){
 #commander0 bash -E $dir_root/test/first/set_bash_flag.sh
 #test_fast_fail
 debug_env0
-commander_subshell0 bash -E 'debug_env0'
+commander_subshell0 bash -Ec 'debug_env0'
 commander_subshell0 bash -c 'debug_env0'
 }
 
