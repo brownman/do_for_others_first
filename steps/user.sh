@@ -2,11 +2,11 @@ set -u
 set -e
 
 ensure1(){
-  test -f $dir_root/bin/user.sh
+  test -f $dir_root/steps/BANK/user.sh
 }
 
 install1(){
-  bash -c $dir_root/bin/user.sh
+  bash -c $dir_root/steps/BANK/user.sh
 }
 run1(){
     true
