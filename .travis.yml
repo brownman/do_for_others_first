@@ -3,7 +3,11 @@
 #https://github.com/lucab0ni/QmlForSymposium/blob/master/.travis.yml
 
 language: python
-#env:
+env:
+  MODE:
+    - test
+    - normal
+    
 #  global:
 #    - DISPLAY=:99.0
 
