@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-
+shopt -s expand_aliases
 set -u
-
+alias set='trace no setting after dinner starts'
 
 trap_err(){
 echo 1>&2 $FUNCNAME
+cowsay $(caller)
 test -f /tmp/err && { cat /tmp/err; } || true
 exit 1
 }
