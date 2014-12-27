@@ -17,10 +17,10 @@ test_before(){
 }
 
 test_after(){
-    local file=$HOME/.link
-    test -f $HOME/.link
-    cat $HOME/.bashrc | grep '.link'
-    (  unset dir_root; set +u; source $HOME/.bashrc; test -v dir_root ; test -v dir_workspace )
+   # local file=$HOME/.link
+  #  test -f $HOME/.link
+  #  cat $HOME/.bashrc | grep '.link'
+    (  set +u; source $HOME/.bashrc | grep ANCHOR )
 
 }
 
