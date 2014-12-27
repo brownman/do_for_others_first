@@ -40,7 +40,7 @@ bash -c $dir_root/install_modules.sh
 }
 
 install_apt(){
-bash -c $dir_root/bin/install_apt.sh
+mute0 bash -c $dir_root/bin/install_apt.sh
 }
 
 steps(){
