@@ -6,5 +6,5 @@ steps(){
 #bash -c $dir_root/steps/service.sh
 }
 
-( set -e; steps )
-echo $?
+ set -e;
+ steps 
