@@ -9,4 +9,3 @@ test:
   override:
   - chmod +x ./travis.sh
   - ./travis.sh
-  - cp /tmp/session.png $CIRCLE_ARTIFACTS
