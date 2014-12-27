@@ -1,7 +1,7 @@
 set -u
 set -e
 intro(){
- trace 'target: create directory: dir_workspace + update bashrc to load the project file: init.cfg'  
+ trace0 'target: create directory: dir_workspace + update bashrc to load the project file: init.cfg'  
 }
 ensure1(){
   test -f $dir_root/steps/BANK/user.sh
