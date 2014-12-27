@@ -22,7 +22,8 @@ ensure_submodules(){
 }
 
 set_env(){
-  struct1
+      export dir_modules=$dir_root/SCRIPT
+
 }
 
 fix_permission(){
