@@ -27,30 +27,7 @@ ensure_submodules(){
 
  
 
-decide1(){
-  case $distro in
-  ubuntu)
-  list_distro_pkg='fortune pv toilet curl wget tree xcowsay libnotify-bin'
-  cmd_distro_install="$SUDO apt-get install -y -q $list_distro_pkg"
-  ;;
-  *)
-  echo 1>&2 "[ERROR] no configuration for distro: $distro"
-  ;;
-  esac
-}
 
-vars1(){
-  #blank
-  export list_distro_pkg=''
-  export cmd_distro_install=''
-  ########################################### distro
-  export distro=ubuntu
-  ########################################### priv
-  export SUDO='sudo'
-  ########################################### lists
-  #cmds1
-#struct1
-}
 
 
 set_env(){
@@ -70,7 +47,7 @@ fix_permission(){
 
 gui_testing(){
     local dir_product=${CIRCLE_ARTIFACTS:-$HOME}
-    bash -E    $dir_root/x11/setup.sh
+    bash -c    $dir_root/x11/setup.sh
     cp /tmp/session.png $dir_product
 }
 
@@ -78,11 +55,11 @@ gui_testing(){
 
 
 install_modules(){
-bash -E $dir_root/install_modules.sh
+bash -c $dir_root/install_modules.sh
 }
 
 install_apt(){
-bash -E $dir_root/bin/install_apt.sh
+bash -c $dir_root/bin/install_apt.sh
 }
 
 steps(){
