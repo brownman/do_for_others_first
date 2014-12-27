@@ -47,7 +47,7 @@ fix_permission(){
 
 gui_testing(){
     local dir_product=${CIRCLE_ARTIFACTS:-$HOME}
-    bash -c    $dir_root/x11/setup.sh
+    bash -c    $dir_root/.utility/x11.sh
     cp /tmp/session.png $dir_product
 }
 
