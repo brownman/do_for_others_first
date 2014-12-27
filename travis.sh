@@ -15,8 +15,9 @@ travis_steps(){
   chmod +x $dir_root/bin/fix_permission.sh
   $dir_root/bin/fix_permission.sh
   $dir_root/bin/submodules_show.sh
+
+  [ $LOGNAME != travis ] && { sudo $dir_root/bin/sources.sh; }  
   $dir_root/bin/install_apt.sh
-  [ $LOGNAME != travis ] && { sudo $dir_root/bin/sources.sh; }
 }
 
 
