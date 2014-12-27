@@ -5,6 +5,8 @@
 export dir_root=$( cd `dirname $0`; echo $PWD )
 echo 1>&2 "[dir_root] $dir_root"
 source $dir_root/config.cfg
+$cmd_trap_err
+
 some_errrrrrrrrrrrrrr
 
 
