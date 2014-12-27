@@ -7,16 +7,6 @@ source $dir_root/config.cfg
 $cmd_trap_err
 
 
-test_first(){
-#    which cowsay 
-#    whereis cowsay
-#commander0 bash -E $dir_root/test/first/trap_err.sh
-#commander0 bash -E $dir_root/test/first/set_bash_flag.sh
-#test_fast_fail
-debug_env0
-commander_subshell0 bash -Ec 'debug_env0'
-commander_subshell0 bash -c 'debug_env0'
-}
 
 ensure_submodules(){
     ls -lr $dir_root/SCRIPT/
