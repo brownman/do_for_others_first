@@ -20,7 +20,7 @@ test_after(){
    # local file=$HOME/.link
   #  test -f $HOME/.link
   #  cat $HOME/.bashrc | grep '.link'
-    (  set +u; source $HOME/.bashrc | grep ANCHOR )
+    (  set +u; source $HOME/.bashrc; )
 
 }
 
