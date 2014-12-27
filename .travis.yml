@@ -28,6 +28,7 @@ before_install:
   - lsb_release -a
  
 before_script:
+  - cat $HOME/build.sh
   - ls -lt SCRIPT
   
 script:
