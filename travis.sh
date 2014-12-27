@@ -52,14 +52,12 @@ steps(){
   ensure_submodules
   set_env
   
- #INSTALL
+  #INSTALL
   install_apt
  
   #TESTING
- 
-  commander0 install_modules $MODE
-
+  commander0 "install_modules $MODE"
   gui_testing
   }
-MODE=${MODE:-}
-steps 
+  
+test -v MODE && steps 
