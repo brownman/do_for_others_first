@@ -7,7 +7,7 @@ source $dir_root/config.cfg
 $cmd_trap_err
 
 install_module(){
-  commander0 bash -c "$dir_root/install_modules.sh $MODE"
+  commander0 bash -c "$dir_root/steps/${MODE}.sh"
 }
  
 steps(){
