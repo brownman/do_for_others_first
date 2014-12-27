@@ -7,5 +7,6 @@ checkout:
     - git submodule update --init
 test:
   override:
+  - sudo apt-get update -y -qq
   - chmod +x ./travis.sh
   - ./travis.sh
