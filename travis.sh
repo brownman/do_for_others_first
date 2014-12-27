@@ -10,14 +10,18 @@ install_module(){
   commander0 bash -c "$dir_root/steps/${MODE}.sh"
 }
  
-steps(){
+travis_steps(){
   chmod +x $dir_root/bin/fix_permission.sh
   $dir_root/bin/fix_permission.sh
   $dir_root/bin/submodules_show.sh
   $dir_root/bin/install_apt.sh
 }
 
-#travis: before_install: pass arg: steps
-cmd_start=${1:-install_module}
-$cmd_start
+
+if [ $# -eq 0 ];then
+commander0 travis_steps
+else
+commander0 install_module $1
+fi
+
  
