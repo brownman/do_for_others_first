@@ -13,11 +13,9 @@ test_first(){
 #commander0 bash -E $dir_root/test/first/trap_err.sh
 #commander0 bash -E $dir_root/test/first/set_bash_flag.sh
 #test_fast_fail
-commander_subshell0 bash -E 'env | grep ERR'
-commander_subshell0 bash -E 'trap | grep ERR'
-commander_subshell0 bash -E 'set | grep set'
-
-
+debug_env0
+commander_subshell0 bash -E 'debug_env0'
+commander_subshell0 bash -c 'debug_env0'
 }
 
 ensure_submodules(){
