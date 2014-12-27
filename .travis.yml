@@ -7,7 +7,7 @@ language: python
 env:
   - MODE: user
   - MODE: library
-  - MODE: idiot_to_genius
+  - MODE: idiot2genius
   - MODE: service
   
 
