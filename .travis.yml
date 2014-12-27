@@ -27,7 +27,7 @@ before_install:
   - uname -m
   - lsb_release -a
   - cat $HOME/build.sh
- - ls -lt SCRIPT
+  - ls -lt SCRIPT
 
 
 
