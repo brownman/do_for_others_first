@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 ############################################# 1st anchor
 export dir_root=$( cd `dirname $0`; echo $PWD )
