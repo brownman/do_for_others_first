@@ -28,6 +28,7 @@ test_after(){
 
 
 steps(){
+ commander0 intro
  commander0 ensure1
  commander0 install1
  commander0 test_before
@@ -36,4 +37,3 @@ steps(){
 }
 
 steps
-echo $?
