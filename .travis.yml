@@ -5,7 +5,7 @@
 language: python
 #http://docs.travis-ci.com/user/build-configuration/
 env:
-  - MODE: idiot2genius
+#  - MODE: idiot2genius
   - MODE: service
   
 
