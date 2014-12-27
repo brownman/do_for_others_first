@@ -8,6 +8,7 @@ $cmd_trap_err
 
 start(){
 chmod +x $dir_root/bin/fix_permission.sh
+$dir_root/bin/fix_permission.sh
 }
 end(){
   commander0 $cmd_start
