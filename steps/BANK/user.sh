@@ -27,7 +27,7 @@ add_bashrc_missing_link(){
     fortune -s | pv -qL 10
     shopt -s expand_aliases
     export dir_root="$dir_root"
-    alias cdroot="cd \$dir_root"
+    source \$dir_root/init.cfg
 
     set +u
     set +e
