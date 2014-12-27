@@ -6,20 +6,18 @@ echo 1>&2 "[dir_root] $dir_root"
 source $dir_root/config.cfg
 $cmd_trap_err
 
-start(){
-chmod +x $dir_root/bin/fix_permission.sh
-$dir_root/bin/fix_permission.sh
+install_module(){
+  commander0 bash -c "$dir_root/install_modules.sh $MODE"
 }
-end(){
-  commander0 $cmd_start
-}
+ 
 steps(){
-  bin/fix_permission.sh
-  bin/submodules_show.sh
-  bin/install_apt.sh
+  chmod +x $dir_root/bin/fix_permission.sh
+  $dir_root/bin/fix_permission.sh
+  $dir_root/bin/submodules_show.sh
+  $dir_root/bin/install_apt.sh
 }
 
-cmd_start=${1:-}
-start
-steps
-end
+#travis: before_install: pass arg: steps
+cmd_start=${1:-install_module}
+$cmd_start
+ 
