@@ -27,7 +27,8 @@ steps(){
  ensure1
  install1
  test1
- run1 && test2
+ run1 
+ test2
 }
 
 steps
