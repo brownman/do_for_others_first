@@ -31,4 +31,3 @@ steps(){
 }
 
 steps
-echo $?
