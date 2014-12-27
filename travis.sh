@@ -53,10 +53,16 @@ steps(){
  install_apt
  
   #TESTING
-  test_first
+  if [ "$MODE" = test ];then
+      test_first
+  else
+      install_modules
+  fi
   
   
-  install_modules
+  
+  
   #gui_testing
   }
+MODE=${MODE:-}
 steps 
