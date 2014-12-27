@@ -53,19 +53,13 @@ steps(){
   set_env
   
  #INSTALL
- install_apt
+  install_apt
  
   #TESTING
-  if [ "$MODE" = test ];then
-      test_first
-  else
-      install_modules
-  fi
-  
-  
-  
-  
-  #gui_testing
+ 
+  commander0 install_modules $MODE
+
+  gui_testing
   }
 MODE=${MODE:-}
 steps 
