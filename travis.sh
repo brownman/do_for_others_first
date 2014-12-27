@@ -94,6 +94,7 @@ gui_testing(){
 test_first(){
 bash -E    $dir_root/test/BANK/trap_err.sh
 bash -E    $dir_root/test/BANK/set_bash_flag.sh
+#test_fast_fail
 }
 
 
@@ -119,8 +120,9 @@ steps(){
 # apt1
  
   #TESTING
+  test_first
   install_modules
-  test_fast_fail
+  
   #gui_testing
   }
   ( steps )
