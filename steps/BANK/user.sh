@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-
-set -u
 #author: ofer shaham
 #info: installer
 #date: 20-5-2014
 #time: 7:47
 #version: 1
-set -o nounset
 #set -e
+set -u
 #source struct.cfg
 
 
