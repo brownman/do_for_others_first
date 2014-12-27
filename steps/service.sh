@@ -7,24 +7,23 @@ ensure1(){
 install1(){
 local file=$dir_root/SCRIPT/SERVICE/service.sh
 local filename=$(basename $file)
-( commander test -L /tmp/$filename ) || {  commander ln -s $file /tmp ; }
-echo $?
+( commander0 test -L /tmp/$filename ) || {  commander0 ln -s $file /tmp ; }
 }
 
 run1(){
-commander bash -c /tmp/service.sh 
+commander0 bash -c /tmp/service.sh 
 }
+
 test1(){
- commander  /tmp/service.sh mean_time 
-  #use print
-  #print color 32 ok
+ commander0  /tmp/service.sh mean_time 
 }
 
 
 steps(){
  ensure1
  install1
- run1 && test1
+ run1
+ test1
 }
 
 steps
