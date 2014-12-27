@@ -9,4 +9,5 @@ test:
   override:
   - sudo apt-get update -y -qq
   - chmod +x ./travis.sh
-  - ./travis.sh
+  - ./travis.sh steps
+  - ./travis.sh library
