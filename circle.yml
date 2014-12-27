@@ -5,7 +5,8 @@ checkout:
   post:
     - git submodule sync
     - git submodule update --init
-    - cat /etc/apt/sources.list
+    #- cat /etc/apt/sources.list
+    - env | grep NAME
     
 test:
   override:
