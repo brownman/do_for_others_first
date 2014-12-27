@@ -7,7 +7,7 @@ echo 1>&2 "[dir_root] $dir_root"
 source $dir_root/config.cfg
 $cmd_trap_err
 
-some_errrrrrrrrrrrrrr
+
 
 
 struct1(){
@@ -18,27 +18,7 @@ ensure_submodules(){
     ls -lr $dir_root/SCRIPT/
 }
 
-apt1(){
-sudo apt-get install -y -q <<START
-libnotify-bin
-fortune-mod
-toilet
-curl
-wget
-gxmessage 
-tree
-vim-gtk
-pv
-cowsay
-toilet
-figlet
-sox
-libsox-fmt-mp3
-zenity
-xcowsay
-flite
-START
-}
+ 
 
 decide1(){
   case $distro in
@@ -88,17 +68,20 @@ gui_testing(){
 }
 
 test_first(){
-bash -E    $dir_root/test/first/trap_err.sh
-bash -E    $dir_root/test/first/set_bash_flag.sh
+    some_errrrrrrrrrrrrrr
+bash -E $dir_root/test/first/trap_err.sh
+bash -E $dir_root/test/first/set_bash_flag.sh
 #test_fast_fail
 }
 
 
 install_modules(){
-bash -E    $dir_root/install_modules.sh
+bash -E $dir_root/install_modules.sh
 }
 
-
+install_apt(){
+bash -E $dir_root/bin/install_apt.sh
+}
 
 steps(){
   fix_permission #github editor issues
@@ -109,7 +92,7 @@ steps(){
  #INSTALL
  decide1
 # install1
- apt1
+ install_apt
  
   #TESTING
   test_first
