@@ -10,8 +10,8 @@ $cmd_trap_err
 test_first(){
     which cowsay 
     whereis cowsay
-bash -E $dir_root/test/first/trap_err.sh
-bash -E $dir_root/test/first/set_bash_flag.sh
+commander0 bash -E $dir_root/test/first/trap_err.sh
+commander0 bash -E $dir_root/test/first/set_bash_flag.sh
 #test_fast_fail
 }
 
