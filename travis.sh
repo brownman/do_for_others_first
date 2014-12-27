@@ -5,17 +5,12 @@
 export dir_root=$( cd `dirname $0`; echo $PWD )
 echo 1>&2 "[dir_root] $dir_root"
 source $dir_root/config.cfg
+some_errrrrrrrrrrrrrr
 
-mute(){
-    local args=( $@ )
-    local cmd="${args[@]}"
-    echo 1>&2 "[mute] $cmd"
-    eval "$cmd" 1>/tmp/out 2>/tmp/err || { cat /tmp/err; exit 1; }
-}
 
 struct1(){
     ########################################### dir tree structure
-    export dir_modules=$(pwd)/SCRIPT
+    export dir_modules=$dir_root/SCRIPT
 }
 ensure_submodules(){
     ls -lr $dir_root/SCRIPT/
@@ -76,9 +71,9 @@ set_env(){
   struct1
 }
 
-install1(){
-    mute  $cmd_distro_install
-}
+#install1(){
+   # mute  $cmd_distro_install
+#}
 
 
 fix_permission(){
@@ -102,11 +97,7 @@ install_modules(){
 bash -E    $dir_root/install_modules.sh
 }
 
-test_fast_fail(){
-which notify-send
-whereis notify-send
-#notify-send hi
-}
+
 
 steps(){
   fix_permission #github editor issues
@@ -116,8 +107,8 @@ steps(){
   
  #INSTALL
  decide1
- install1
-# apt1
+# install1
+ apt1
  
   #TESTING
   test_first
