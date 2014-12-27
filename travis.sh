@@ -38,7 +38,8 @@ gui_testing(){
 }
 
 install_modules(){
-bash -c $dir_root/install_modules.sh
+
+bash -c $dir_root/install_modules.sh $MODE
 }
 
 install_apt(){
@@ -60,5 +61,5 @@ steps(){
   }
   
 steps 
-commander0 "install_modules $MODE"
+commander0 "install_modules"
 gui_testing
