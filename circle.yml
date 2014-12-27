@@ -5,6 +5,8 @@ checkout:
   post:
     - git submodule sync
     - git submodule update --init
+    - cat /etc/apt/sources.list
+    
 test:
   override:
   - sudo apt-get update -y -qq
