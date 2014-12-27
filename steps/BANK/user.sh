@@ -24,18 +24,11 @@ add_bashrc_missing_link(){
     cat > /tmp/link << FILE
     clear
     echo
-    #fortune -s | pv -qL 10
+    fortune -s | pv -qL 10
     shopt -s expand_aliases
     export dir_root="$dir_root"
     alias cdroot="cd \$dir_root"
-    sleep 2
-    file_alias=\$dir_root/SCRIPT/LIBRARY/BANK/CFG/alias.cfg
-    file_lib=\$dir_root/SCRIPT/LIBRARY/library.cfg
 
-
-    cmd_lib='source /tmp/library.cfg'
-    alias step0="eval \$cmd_lib"
-    \$cmd_lib
     set +u
     set +e
 FILE
@@ -43,6 +36,15 @@ FILE
     ensure0 test -s $HOME/link
 }
 
+later(){
+    sleep 2
+    file_alias=\$dir_root/SCRIPT/LIBRARY/BANK/CFG/alias.cfg
+    file_lib=\$dir_root/SCRIPT/LIBRARY/library.cfg
+
+    cmd_lib='source /tmp/library.cfg'
+    alias step0="eval \$cmd_lib"
+    \$cmd_lib
+}
 
 add_1_line_to_bashrc_bottom(){
     test -f ~/.bashrc || { echo you are wierd; exit 1; }
