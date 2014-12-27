@@ -22,8 +22,8 @@ test_after(){
    # local file=$HOME/.link
   #  test -f $HOME/.link
   #  cat $HOME/.bashrc | grep '.link'
-   # ( unset dir_root; source $HOME/link; test -v dir_root; test -v STEP; )
-   true
+    ( unset dir_root; source $HOME/link; test -v dir_root; test -v STEP; )
+   
 
 }
 
