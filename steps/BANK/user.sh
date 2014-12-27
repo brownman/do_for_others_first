@@ -42,6 +42,7 @@ add_bashrc_missing_link(){
     set +e
 FILE
     cp /tmp/link $HOME/link
+    ensure1 test -s $HOME/link
 }
 
 
@@ -53,6 +54,8 @@ add_1_line_to_bashrc_bottom(){
     str=$( cat $HOME/.bashrc | grep "$line" )
     res=$?
     [ $res -eq 1  ] && { echo "$msg" ; echo "$line" >> ~/.bashrc; } || { echo "[bashrc Link] already Exist " ;}
+    ensure1 'cat $HOME/.bashrc | grep $HOME/link'
+
 }
 
 create_workspace_for_user(){
@@ -71,7 +74,7 @@ create_workspace_for_user(){
 
         test  -s  "$file_dest"  && ( echo "already exist: $file_dest" 1>/dev/null ) || ( cp  $file_source $file_dest )
     done
-
+    ensure1 test -f "$HOME/.config/do_for_others_first/languages.txt"
 }
 
 single(){
