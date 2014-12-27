@@ -7,7 +7,8 @@ source $dir_root/config.cfg
 $cmd_trap_err
 
 install_module(){
-  commander0 bash -c "$dir_root/steps/${MODE}.sh"
+  local mode=$1
+  commander0 bash -c "$dir_root/steps/${mode}.sh"
 }
  
 travis_steps(){
