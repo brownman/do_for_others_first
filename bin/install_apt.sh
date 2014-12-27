@@ -26,7 +26,7 @@ vars1(){
 apt1(){
 while read line;do
   commander sudo apt-get install -y -q $line
-done < <(cat START
+done < <(cat <<START
 libnotify-bin
 fortune-mod
 toilet
