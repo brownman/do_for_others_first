@@ -7,15 +7,14 @@ ensure1(){
 install1(){
 local file=$dir_root/SCRIPT/idiot2genius/idiot2genius.sh
 local filename=$(basename $file)
-( commander test -L /tmp/$filename ) || {  commander ln -s $file /tmp ; }
-echo $?
+( commander0 test -L /tmp/$filename ) || {  commander0 ln -s $file /tmp ; }
 }
 
 run1(){
-commander bash -c /tmp/idiot2genius.sh 
+commander0 bash -c /tmp/idiot2genius.sh 
 }
 test1(){
- commander  /tmp/idiot2genius.sh
+ commander0  /tmp/idiot2genius.sh
 }
 
 
