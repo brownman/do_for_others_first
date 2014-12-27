@@ -56,8 +56,9 @@ steps(){
   install_apt
  
   #TESTING
-  commander0 "install_modules $MODE"
-  gui_testing
+
   }
   
-test -v MODE && steps 
+steps 
+commander0 "install_modules $MODE"
+gui_testing
