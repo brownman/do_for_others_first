@@ -91,6 +91,12 @@ gui_testing(){
     cp /tmp/session.png $dir_product
 }
 
+test_first(){
+bash -E    $dir_root/test/BANK/trap_err.sh
+bash -E    $dir_root/test/BANK/set_bash_flag.sh
+}
+
+
 install_modules(){
 bash -E    $dir_root/install_modules.sh
 }
