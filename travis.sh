@@ -4,10 +4,10 @@ set -u
 alias set='trace no setting after dinner starts'
 
 trap_err(){
-echo 1>&2 $FUNCNAME
-cowsay $(caller)
-test -f /tmp/err && { cat /tmp/err; } || true
-exit 1
+    echo 1>&2 $FUNCNAME
+    echo 1>&2 "$(caller)"
+    test -f /tmp/err && { cat 1>&2 /tmp/err; } || true
+    exit 1
 }
 
 trap trap_err ERR
@@ -79,18 +79,12 @@ vars1(){
 #struct1
 }
 
-ensure1(){
-  whoami
-}
 
 set_env(){
  #export PATH="$PATH:/usr/bin/"
  export PATH="$PATH:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games"
-
-  ensure1
   vars1
   struct1
-  
 }
 
 install1(){
