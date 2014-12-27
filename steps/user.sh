@@ -21,7 +21,9 @@ test_after(){
     test -f $HOME/.link
     cat $HOME/.bashrc | grep '.link'
     (  unset dir_root; set +u; source $HOME/.bashrc; test -v dir_root )
-    test -v dir_workspace
+ensure0  test -v dir_workspace
+ensure0    test -v dir_workspace
+
 }
 
 
