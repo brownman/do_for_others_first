@@ -20,7 +20,7 @@ test_after(){
     local file=$HOME/.link
     test -f $HOME/.link
     cat $HOME/.bashrc | grep '.link'
-    (  unset dir_root; source $HOME/.bashrc; test -v dir_root )
+    (  unset dir_root; set +u; source $HOME/.bashrc; test -v dir_root )
     test -v dir_workspace
 }
 
