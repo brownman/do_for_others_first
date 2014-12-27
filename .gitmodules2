@@ -1,6 +1,0 @@
-[submodule "SCRIPT/LIBRARY"]
-        path = SCRIPT/LIBRARY
-	url =  git://github.com/brownman/LIBRARY.git
-[submodule "SCRIPT/travis_screencast"]
-	path = SCRIPT/travis_screencast
-	url = git://github.com/brownman/travis_screencast.git
