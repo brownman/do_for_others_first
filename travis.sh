@@ -103,7 +103,9 @@ fix_permission(){
 }
 
 gui_testing(){
-  bash -E    $dir_root/x11/setup.sh
+    local dir_product=${CIRCLE_ARTIFACTS:-$HOME}
+    bash -E    $dir_root/x11/setup.sh
+    cp /tmp/session.png $dir_product
 }
 
 install_modules(){
