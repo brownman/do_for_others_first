@@ -40,6 +40,7 @@ bash -c $dir_root/install_modules.sh
 
 install_apt(){
 mute0 bash -c $dir_root/bin/install_apt.sh
+ensure0 cowsay apt-ok
 }
 
 steps(){
