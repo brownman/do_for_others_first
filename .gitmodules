@@ -10,3 +10,6 @@
 [submodule "SCRIPT/GENERATOR"]
 	path = SCRIPT/GENERATOR
 	url = git://github.com/brownman/GENERATOR.git
+[submodule "SCRIPT/idiot2genius"]
+	path = SCRIPT/idiot2genius
+	url = git://github.com/brownman/idiot2genius.git
