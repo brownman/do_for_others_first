@@ -15,7 +15,7 @@ commander0 bash -c /tmp/service.sh
 }
 
 test1(){
- commander0  /tmp/service.sh mean_time 
+ commander0  /tmp/service.sh time 
 }
 
 
