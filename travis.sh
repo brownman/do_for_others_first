@@ -125,5 +125,4 @@ steps(){
   
   #gui_testing
   }
-  ( steps )
-echo $?
+steps 
