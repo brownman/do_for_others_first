@@ -25,7 +25,7 @@ vars1(){
 
 apt1(){
 while read line;do
-  commander0 sudo apt-get install -y -q $line
+  mute0 sudo apt-get install -y -q $line
 done < <(cat <<START
 libnotify-bin
 fortune-mod
