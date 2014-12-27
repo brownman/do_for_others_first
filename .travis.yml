@@ -5,8 +5,11 @@
 language: python
 #http://docs.travis-ci.com/user/build-configuration/
 env:
-  - MODE: test
-  - MODE: normal
+  - MODE: user
+  - MODE: library
+  - MODE: idiot_to_genius
+  - MODE: service
+  
 
     
 #  global:
