@@ -9,8 +9,7 @@ run1(){
     source /tmp/library.cfg
 }
 test1(){
-
-test -L /tmp/dir_root
+test -L /tmp/dir_root || { exit 1; }
 }
 test2(){
 
@@ -19,6 +18,8 @@ test2(){
   type commander
 #  commander type dialog_confirm
 commander echo ok
+finder print
+finder translate sh
 }
 
 
