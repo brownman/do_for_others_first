@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
-shopt -s expand_aliases
-set -u
-alias set='trace no setting after dinner starts'
 
-trap_err(){
-    echo 1>&2 $FUNCNAME
-    echo 1>&2 "$(caller)"
-    test -f /tmp/err && { cat 1>&2 /tmp/err; } || true
-    exit 1
-}
-
-trap trap_err ERR
 
 ############################################# 1st anchor
 export dir_root=$( cd `dirname $0`; echo $PWD )
