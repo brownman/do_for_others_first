@@ -26,12 +26,16 @@ before_install:
   # Print out Ubuntu version and architecture type used in Travis
   - uname -m
   - lsb_release -a
- 
-before_script:
   - cat $HOME/build.sh
-  - ls -lt SCRIPT
+ - ls -lt SCRIPT
+
+
+
+
+before_script:
+  - chmod +x ./travis.sh
+  - ./travis.sh steps
   
 script:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-  - chmod +x ./travis.sh
   - ./travis.sh $MODE
