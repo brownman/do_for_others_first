@@ -68,7 +68,6 @@ vars1(){
 
 set_env(){
  #export PATH="$PATH:/usr/bin/"
- export PATH="$PATH:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games"
   vars1
   struct1
 }
