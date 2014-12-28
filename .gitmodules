@@ -13,3 +13,6 @@
 [submodule "SCRIPT/idiot2genius"]
 	path = SCRIPT/idiot2genius
 	url = git://github.com/brownman/idiot2genius.git
+[submodule "SCRIPT/travis_screencast"]
+	path = SCRIPT/travis_screencast
+	url = git://github.com/brownman/travis_screencast.git

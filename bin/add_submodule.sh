@@ -3,14 +3,13 @@ set -u
 repo1=${1:-LIBRARY}
 set_env(){
     repo_base=git://github.com/brownman
-
     path1=SCRIPT/$repo1
 }
 
 add1(){
-    local repo0=$1
+    local suffix=$1
     local path=$2
-    local repo=$repo_base/$repo0.git
+    local repo=$repo_base/$suffix.git
     confirm git submodule add $repo $path --depth 1
 }
 
