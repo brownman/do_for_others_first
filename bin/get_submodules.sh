@@ -13,4 +13,6 @@ git submodule update
 use_shallow_update_init(){
      git submodule update --init --depth 1
  }
- use_shallow_clone
+ #use_shallow_clone
+
+use_shallow_update_init
