@@ -20,9 +20,9 @@ test_after(){
    # local file=$HOME/.link
   #  test -f $HOME/.link
   #  cat $HOME/.bashrc | grep '.link'
-  alias set
-  unalias set
-  alias set
+ # alias set
+ # unalias set
+ # alias set
 
     ( unset dir_root; source $HOME/link; test -v dir_root; test -v STEP; )
    
