@@ -25,8 +25,8 @@ before_install:
   - uname -m
   - lsb_release -a
   - cat $HOME/build.sh
-  - ls -lt SCRIPT
-  - cat /etc/apt/sources.list
+ # - ls -lt SCRIPT
+ # - cat /etc/apt/sources.list
 
 
 
