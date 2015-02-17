@@ -1,0 +1,12 @@
+~
+.OTHERS
+.SUBMODULES
+~/*
+.old
+.history
+.shit
+\\~/
+.gitmodules
+.HIDDEN2
+.SUBMODULE
+possible.yaml

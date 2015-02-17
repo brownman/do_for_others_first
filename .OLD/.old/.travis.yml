@@ -1,0 +1,22 @@
+before_install:
+- sudo apt-get install -y fortune pv toilet curl wget tree
+language: bash
+git:
+  submodules: false
+before_script: "./install.sh"
+script: source /tmp/library.cfg
+after_script: use print;print ok hello world
+branches:
+  only:
+  - develop
+env:
+  global:
+  - url_travis="http://docs.travis-ci.com/user/build-configuration/"
+  - secure: WaNFfK6K0vnldd7Pfd+ulQgQSbRjUQMBLG3ZJ7kt1ccwt+Ob0uXzarUDs7T2BDskuLhclGTddF16MZilcXzL+1fn0ms4wddnAtwRfuZN138e7eEvzyv5LtPF1183XfMRAYDxiU0aEPkjHybZ3tjBsQsp8gJdLoL+aI28TlmZ5FE=
+  - secure: BoxdpTBwpT96yBY54GajDULAj8NuTwCYKOEqLKFwz5VFJ0lwRE6x4N4EgCgeiIFBn2nTyoxo9CcqcseddU36Mef7EQxzKDAsbiaxwMQ4EWdgCKZqC1rNAKOS9gdJr4QHh3Lo3HWwX51PGfaDcYivbY51ZcIP4M77yUjvLfUXUV0=
+  - secure: aBTmRNwinMTAvAoxihvqZNkjgjHF+m7gptgxD6sBKymC8sctPHIO8IfZxyPNYpEx4vReAdiW5g659dKjBbtQVugouxsuAXm3dWTVVMgMIx/Tw9t6DgCW7WGT7HXCiEhA943/l2F7yz6o+KPtgM84V6zBHkrN7vL0kuaXZhR77u0=
+  matrix:
+  - USE_NETWORK=false
+notifications:
+  email:
+  - advance.linux2@gmail.com
