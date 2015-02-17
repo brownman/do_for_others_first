@@ -13,6 +13,7 @@ test:
   - sudo apt-get update -y -qq
   - chmod +x ./travis.sh
   - ./travis.sh #steps
+  #- ./artifacts/gui.sh
   #- ./travis.sh user
   #- ./travis.sh library
   #- ./travis.sh service
