@@ -1,0 +1,7 @@
+use dialog_scale force
+dialog_scale_test
+
+use xcowsay1 force
+use dialog_optional force
+xcowsay_file_test
+
