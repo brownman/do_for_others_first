@@ -1,0 +1,30 @@
+
+
+shopt -s expand_aliases
+pkgs="xsel cowsay xcowsay fortune pv"
+type $pkgs &>/dev/null || ( sudo apt-get install $pkgs)
+clear
+echo
+trap_sigint(){
+    xcowsay "$(cowsay mo000000000oo)" --at 200,100 &
+    sleep 1.6
+
+    #xcowsay --cow-size small '!' --at 120,250 &
+
+
+    local str="$( /usr/games/fortune -s )"
+    echo $str | xsel --clipboard
+    xcowsay --cow-size small "$str" --at 0,173 &
+
+}
+trap trap_sigint SIGINT
+str=`fortune -s`
+
+echo "$str"  | pv -qL 10  || (  clear; echo $str;echo;echo )
+sleep 2
+export dir_root="/home/someone1/Downloads/do_for_others_first"
+source $dir_root/init.cfg
+
+set +u
+set +e
+
