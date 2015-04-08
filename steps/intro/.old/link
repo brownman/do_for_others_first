@@ -13,32 +13,18 @@ trap_sigint(){
 
 
     local str="$( /usr/games/fortune -s )"
-   # echo $str | xsel --clipboard
+    echo $str | xsel --clipboard
     xcowsay --cow-size small "$str" --at 0,173 &
 
 }
-let 'counter = 0'
-print_it(){
-    let 'counter += 1'
-local str="$@"    
-echo "$str\n\n"  | pv -qL 10  || (  
-if [ $counter -eq 1 ];then
-clear;
-fi
-
-echo $str;echo;echo )
-    }
 trap trap_sigint SIGINT
+str=`fortune -s`
 
-str=$( fortune -s )
-print_it $str
-str='![hint] update the library from time to time .............. !'
-print_it $str
-str='[example] use git edit - for updating: BANK/GIT/git.cfg'
-print_it $str
-
+echo "$str"  | pv -qL 10  || (  clear; echo $str;echo;echo )
+sleep 2
 export dir_root="/home/someone1/Downloads/do_for_others_first"
 source $dir_root/init.cfg
 
 set +u
 set +e
+
