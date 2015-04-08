@@ -1,4 +1,0 @@
-1. travis+circle ci: green
-2. upload build artifacts
-3. mv code to repos
-4. use parellel pushes to folders: src,test
