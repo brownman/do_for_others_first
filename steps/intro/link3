@@ -1,0 +1,44 @@
+
+
+shopt -s expand_aliases
+pkgs="xsel cowsay xcowsay fortune pv"
+type $pkgs &>/dev/null || ( sudo apt-get install $pkgs)
+clear
+echo
+trap_sigint(){
+    xcowsay "$(cowsay mo000000000oo)" --at 200,100 &
+    sleep 1.6
+
+    #xcowsay --cow-size small '!' --at 120,250 &
+
+
+    local str="$( /usr/games/fortune -s )"
+   # echo $str | xsel --clipboard
+    xcowsay --cow-size small "$str" --at 0,173 &
+
+}
+let 'counter = 0'
+print_it(){
+    let 'counter += 1'
+local str="$@"    
+echo "$str\n\n"  | pv -qL 10  || (  
+if [ $counter -eq 1 ];then
+clear;
+fi
+
+echo $str;echo;echo )
+    }
+trap trap_sigint SIGINT
+
+str=$( fortune -s )
+print_it $str
+#str='![hint] update the library from time to time .............. !'
+#print_it $str
+#str='[example] use git edit - for updating: BANK/GIT/git.cfg'
+#print_it $str
+
+export dir_root="/home/someone1/Downloads/do_for_others_first"
+source $dir_root/init.cfg
+
+set +u
+set +e
